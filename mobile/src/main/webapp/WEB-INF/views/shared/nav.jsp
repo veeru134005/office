@@ -27,7 +27,7 @@
                 
                     <li id="about"><a href="${context}/about">About</a>
                     </li>
-                    <li id="list"><a href="${context}/listProducts">View Products</a>
+                    <li id="list"><a href="${context}/show/all/products">View Products</a>
                     </li>
                     <li id="contact"><a href="${context}/contact">Contact</a>
                     

@@ -20,7 +20,7 @@ public class Daoimpl implements DaoInter {
 		
 		catro.setId(123);
 		catro.setDescription("The item may not delete from the try");
-		catro.setName("Laptop");
+		catro.setName("Telivision");
 		catro.setImageUrl("hari.jpg");
 		
 		c.add(catro);
@@ -40,7 +40,7 @@ public class Daoimpl implements DaoInter {
 
 		catro.setId(125);
 		catro.setDescription("The item may not delete from the try");
-		catro.setName("T.v's");
+		catro.setName("Laptop");
 		catro.setImageUrl("hari.jpg");
 
 		c.add(catro);
@@ -48,10 +48,26 @@ public class Daoimpl implements DaoInter {
 
 	}
 
+
+
+	@Override
+	public Catagory get(int id) {
+		// TODO Auto-generated method stub
+		
+	 	for(Catagory cata:c)
+		{
+			if(cata.getId()==id) return cata;
+		}
+		
+		return null;
+	}
+
+
+
 	@Override
 	public List<Catagory> list() {
-
-		return c;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

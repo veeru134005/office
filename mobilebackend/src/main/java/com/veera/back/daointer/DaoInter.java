@@ -7,5 +7,6 @@ import com.veera.back.dto.Catagory;
 public interface DaoInter {
 	
 	List<Catagory> list();
+	Catagory get(int id);
 	
 }
