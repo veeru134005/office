@@ -13,8 +13,8 @@ xmlns:mvc = "http://www.springframework.org/schema/mvc"
    ">
    
   <context:component-scan base-package="com.veera"/>
-  <context:component-scan base-package="com.veera.back.daoimpl.Daoimpl"/>
-   <context:component-scan base-package="com.veera.back.daointer.DaoInter"/>
+  <context:component-scan base-package="com.veera.back"/>
+   
   <mvc:annotation-driven/>
 <mvc:resources location="/asserts/" mapping="/resoureces/**"/>
   
