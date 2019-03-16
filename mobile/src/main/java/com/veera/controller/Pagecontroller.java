@@ -19,9 +19,9 @@ public class Pagecontroller {
 	public ModelAndView page() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Home");
-		
-		mv.addObject("catagories",categoryDao.list());
-		
+
+		mv.addObject("catagories", categoryDao.list());
+		System.out.println(categoryDao.list());
 		mv.addObject("userClickHome", true);
 
 		return mv;
@@ -47,46 +47,33 @@ public class Pagecontroller {
 		return mv;
 	}
 
-	
-	
 	/*
 	 * 
 	 * methods to load the products and based on category
 	 */
-	
+
 	@RequestMapping("/show/all/products")
 	public ModelAndView showAllProducts() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "All the products");
+		mv.addObject("catagories", categoryDao.list());
 		mv.addObject("userClickAllProducts", true);
 		return mv;
 	}
-	
-	
-	@RequestMapping(value="/show/category/{id}/products")
+
+	@RequestMapping(value = "/show/category/{id}/products")
 	public ModelAndView showCategoryProducts(@PathVariable("id") int id) {
-		
-		//categoryDao to fetch a single category
-		Catagory ca =null;
-		
-		ca=categoryDao.get(id);
-		
+
+		// categoryDao to fetch a single category
+		Catagory ca = null;
+		ca = categoryDao.get(id);
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", ca.getName());
-		
-		//passing the list of categories
-		mv.addObject("catagories",categoryDao.list());
-		
-		//passing the single category object
-		mv.addObject("category",ca);
-		
-		mv.addObject("userClickCategoryProducts",true);
+		// passing the list of categories
+		mv.addObject("catagories", categoryDao.list());
+		// passing the single category object
+		mv.addObject("category1", ca);
+		mv.addObject("userClickCategoryProducts", true);
 		return mv;
 	}
-	
-	
-	
-	
-	
-	
 }

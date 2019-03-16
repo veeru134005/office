@@ -7,8 +7,6 @@
 			<%@ include file="./shared/nav.jsp" %>
 			
 		</div>
-		
-		
 		<!-- to display the actual products -->
 		
 		<div class="col-md-9">
@@ -25,14 +23,13 @@
 			</c:if>
 		
 			<c:if test="${userClickCategoryProducts ==true}">
+			<%@include file="./shared/slider.jsp" %>
 			<ol class="breadcrumb">
 			<li><a href="${context}/home">HOME</a> </li>
 			<li class="active">Category</li>
-			<li class="active">${category.name}</li>
+			<li class="active">${category1.name}</li>
 			</ol>
 			</c:if>
-
-
 		</div>	
 			
 		

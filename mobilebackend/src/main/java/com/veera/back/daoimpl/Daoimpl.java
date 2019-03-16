@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.veera.back.daointer.DaoInter;
 import com.veera.back.dto.Catagory;
 
-@Repository("DaoInter")
+@Repository("categoryDao")
 public class Daoimpl implements DaoInter {
 
 	private static List<Catagory> c = new ArrayList<>();
@@ -67,7 +67,7 @@ public class Daoimpl implements DaoInter {
 	@Override
 	public List<Catagory> list() {
 		// TODO Auto-generated method stub
-		return null;
+		return c;
 	}
 
 }
