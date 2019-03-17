@@ -16,6 +16,7 @@
 		<div class="col-lg-12">
 		
 			<c:if test="${userClickAllProducts ==true}">
+			<%@include file="./shared/slider.jsp" %>
 			<ol class="breadcrumb">
 			<li><a href="${context}/home">HOME</a> </li>
 			<li class="active">All Products</li>
