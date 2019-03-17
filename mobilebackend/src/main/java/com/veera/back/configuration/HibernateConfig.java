@@ -21,7 +21,7 @@ public class HibernateConfig {
 	// Change the below based on the DBMS you choose
 	private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/test";
 	private final static String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
-	private final static String DATABASE_DIALECT = "org.hibernate.dialect.MySQLDialect";
+	private final static String DATABASE_DIALECT = "org.hibernate.dialect.MySQL5Dialect";
 	private final static String DATABASE_USERNAME = "root";
 	private final static String DATABASE_PASSWORD = "";
 	
@@ -68,7 +68,7 @@ public class HibernateConfig {
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
 		
-		//properties.put("hibernate.hbm2ddl.auto", "create");
+		properties.put("hibernate.hbm2ddl.auto", "update");
 		
 		
 		return properties;

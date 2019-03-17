@@ -110,9 +110,9 @@ CREATE TABLE order_item (
 
 
 -- adding three categories
-INSERT INTO category (name, description,image_url,is_active) VALUES ('Laptop', 'This is description for Laptop category!', 'CAT_1.png', true);
-INSERT INTO category (name, description,image_url,is_active) VALUES ('Television', 'This is description for Television category!', 'CAT_2.png', true);
-INSERT INTO category (name, description,image_url,is_active) VALUES ('Mobile', 'This is description for Mobile category!', 'CAT_3.png', true);
+INSERT INTO category (name, description,imageUrl,active) VALUES ('Laptop', 'This is description for Laptop category!', 'CAT_1.png', true);
+INSERT INTO category (name, description,imageUrl,active) VALUES ('Television', 'This is description for Television category!', 'CAT_2.png', true);
+INSERT INTO category (name, description,imageUrl,active) VALUES ('Mobile', 'This is description for Mobile category!', 'CAT_3.png', true);
 -- adding three users 
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 

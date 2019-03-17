@@ -2,6 +2,8 @@ package com.veera.back.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -35,12 +37,21 @@ public class JunitTest {
 
 	}
 */
-	@Test
+/*	@Test
 	public void getingData(){
 		
 		cata=dao.get(3);
 		
 		assertEquals("success","Laptop",cata.getName());
+		
+	}*/
+	
+	@Test
+	public void getalldetails(){
+		
+	List<Catagory> c=dao.list();
+	
+	assertEquals("success",c);
 		
 	}
 	

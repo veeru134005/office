@@ -2,6 +2,8 @@ package com.veera.back.daoimpl;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,9 +30,14 @@ public class Daoimpl implements DaoInter {
 	}
 
 	@Override
+	@Transactional(readOnly=false)
 	public List<Catagory> list() {
-
-		return null;
+		String qury = "From Catagory where active= :active";
+		Query q = ses.getCurrentSession().createQuery(qury);
+		q.setParameter("active", true);
+		List<Catagory> list = q.getResultList();
+		System.out.println(list);
+		return list;
 	}
 
 	@Override
@@ -50,13 +57,31 @@ public class Daoimpl implements DaoInter {
 	@Override
 	public boolean update(Catagory category) {
 		// TODO Auto-generated method stub
-		return false;
+
+		try {
+			ses.getCurrentSession().update(category);
+			return true;
+
+		} catch (Exception e) {
+
+			return false;
+		}
+
 	}
 
 	@Override
 	public boolean delete(Catagory category) {
 		// TODO Auto-generated method stub
-		return false;
+		category.setActive(false);
+		try {
+			ses.getCurrentSession().update(category);
+			return true;
+
+		} catch (Exception e) {
+
+			return false;
+		}
+
 	}
 
 }
