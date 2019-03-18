@@ -44,6 +44,7 @@
 
 	<script type="text/javascript">
 		window.menu = '${title}';
+		window.contextRoot='${context}'
 	</script>
 
 
