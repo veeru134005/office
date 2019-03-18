@@ -85,15 +85,13 @@
 
 	<%@include file="./shared/footer.jsp"%>
 
- 
-
-
 	<!-- JavaScript -->
 	<script src="${js}/jquery.js"></script>
 	<script src="${js}/bootstrap.min.js"></script>
+	<!-- data tables -->
+		<script src="${js}/jquery.dataTables.js"></script>
 
 	<!-- Self coded js file -->	
-
 	<script src="${js}/myapp.js"></script>
 	
 	
