@@ -44,7 +44,7 @@
 
 	<script type="text/javascript">
 		window.menu = '${title}';
-		window.contextRoot='${context}'
+		window.contextRoot = '${context}'
 	</script>
 
 
@@ -54,68 +54,69 @@
 
 	<!-- Loading the home page -->
 
-     <!-- Loading the content -->
+	<!-- Loading the content -->
 
-<div class="wrapper">
+	<div class="wrapper">
 
-	<div class="content">
-	
-	
-	
-	<c:if test="${userClickHome==true}">
-		<%@include file="./shared/home.jsp"%>
-	</c:if>
-
-	<!-- Loading the About page -->
-
-	<c:if test="${userClickAbout==true}">
-		<%@include file="about.jsp"%>
-	</c:if>
-
-	<c:if test="${userClickContact==true}">
-		<%@include file="contact.jsp"%>
-	</c:if>
-
-	<c:if test="${userClickAllProducts==true or userClickCategoryProducts==true}">
-	   
-		<%@include file="listProducts.jsp"%>
-	</c:if>
-
-
-</div>
-
-
-	<!-- Loading the footer -->
+		<div class="content">
 
 
 
-	<%@include file="./shared/footer.jsp"%>
+			<c:if test="${userClickHome==true}">
+				<%@include file="./shared/home.jsp"%>
+			</c:if>
 
-	<!-- JavaScript -->
-	<!-- jQuery -->
+			<!-- Loading the About page -->
+
+			<c:if test="${userClickAbout==true}">
+				<%@include file="about.jsp"%>
+			</c:if>
+
+			<c:if test="${userClickContact==true}">
+				<%@include file="contact.jsp"%>
+			</c:if>
+
+			<c:if
+				test="${userClickAllProducts==true or userClickCategoryProducts==true}">
+
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+			<!-- Loading the single page -->
+			<c:if test="${userClickShowProudct ==true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
+
+		</div>
+
+
+		<!-- Loading the footer -->
+		<%@include file="./shared/footer.jsp"%>
+
+		<!-- JavaScript -->
+		<!-- jQuery -->
 		<script src="${js}/jquery.js"></script>
 
 		<script src="${js}/jquery.validate.js"></script>
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
-		
+
 		<!-- DataTable Plugin -->
 		<script src="${js}/jquery.dataTables.js"></script>
-		
+
 		<!-- DataTable Bootstrap Script -->
 		<script src="${js}/dataTables.bootstrap.js"></script>
-		
+
 		<!-- DataTable Bootstrap Script -->
 		<script src="${js}/bootbox.min.js"></script>
-		
+
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
-	
-	
 
 
-    </div>
+
+
+	</div>
 </body>
 
 </html>

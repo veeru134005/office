@@ -24,6 +24,8 @@ public class ProductDAOImpl implements ProductDAO {
 	
 	@Override
 	public Product get(int productId) {
+		
+		
 		try {			
 			return sessionFactory
 					.getCurrentSession()

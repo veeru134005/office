@@ -7,13 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.veera.back.daointer.DaoInter;
+import com.veera.back.daointer.ProductDAO;
 import com.veera.back.dto.Catagory;
+import com.veera.back.dto.Product;
+import com.veera.exception.productNotFoundException;
 
 @Controller
 public class Pagecontroller {
 
 	@Autowired
 	private DaoInter categoryDao;
+
+	@Autowired
+	private ProductDAO productDao;
 
 	@RequestMapping(value = { "/", "/index", "/home" })
 	public ModelAndView page() {
@@ -76,4 +82,22 @@ public class Pagecontroller {
 		mv.addObject("userClickCategoryProducts", true);
 		return mv;
 	}
+	//Getting the single Proudct
+	@RequestMapping("/show/{id}/product")
+	public ModelAndView singlePage(@PathVariable int id) throws productNotFoundException{
+		ModelAndView mv = new ModelAndView("page");
+		Product p = productDao.get(id);
+        if(p==null)throw new productNotFoundException();
+		// update the view count
+
+		p.setViews(p.getViews() + 1);
+		productDao.update(p);
+
+		mv.addObject("title",p.getName());
+		mv.addObject("product",p);
+		mv.addObject("userClickShowProudct",true);
+		
+		return mv;
+	}
+
 }
